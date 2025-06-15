@@ -6,10 +6,11 @@ import Admissions from './pages/Admissions';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact.tsx';
 import MandatoryDisclosure from './pages/MandatoryDisclosure.tsx';
+import ScrollToTop from './components/ScrollToTop.tsx';
 
 function App() {
   return (
-    <Router>
+      <ScrollToTop>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -19,7 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
       </Routes>
-    </Router>
+    </ScrollToTop>
   );
 }
 
