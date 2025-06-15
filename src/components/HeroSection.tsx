@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
+  let navigate = useNavigate();
   return (
     <section className="relative h-screen flex items-center justify-center bg-blue-900 text-white">
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="container mx-auto px-4 z-10 text-center">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -13,7 +15,7 @@ const HeroSection = () => {
         >
           Welcome to GB Convent Etah
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -26,10 +28,14 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full text-lg mr-4 mb-4">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-8 rounded-full text-lg mr-4 mb-4" onClick={() => {
+            navigate("/admissions");
+          }}>
             Admissions
           </button>
-          <button className="border-2 border-white hover:bg-white hover:text-blue-900 font-bold py-3 px-8 rounded-full text-lg mr-4 mb-8">
+          <button className="border-2 border-white hover:bg-white hover:text-blue-900 font-bold py-3 px-8 rounded-full text-lg mr-4 mb-8" onClick={() => {
+            navigate("/about");
+          }}>
             Learn More
           </button>
         </motion.div>
