@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-    <div className="pt-16"> {/* Padding to account for fixed header */}
+    <div>
       <Header />
       <HeroSection />
       <AboutSection />

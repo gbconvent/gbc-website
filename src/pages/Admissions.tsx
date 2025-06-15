@@ -31,7 +31,7 @@ const Admissions = () => {
   ];
 
   return (
-    <div className="pt-16">
+    <div>
       <Header />
       
       <section className="py-20 bg-blue-900 text-white">

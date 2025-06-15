@@ -4,7 +4,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <div className="pt-16">
+    <div>
       <Header />
       
       <section className="py-20 bg-blue-900 text-white">

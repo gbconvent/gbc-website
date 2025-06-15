@@ -13,17 +13,24 @@ const Header = () => {
             GB Convent Etah
           </Link>
         </div>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
           <Link to="/" className="text-gray-800 hover:text-blue-600">Home</Link>
+
           <Link to="/about" className="text-gray-800 hover:text-blue-600">About Us</Link>
+
           <Link to="/academics" className="text-gray-800 hover:text-blue-600">Academics</Link>
+
           <Link to="/admissions" className="text-gray-800 hover:text-blue-600">Admissions</Link>
+
+          <Link to="/mandatory-disclosure" className="text-gray-800 hover:text-blue-600">Disclosure</Link>
+
           <Link to="/gallery" className="text-gray-800 hover:text-blue-600">Gallery</Link>
+
           <Link to="/contact" className="text-gray-800 hover:text-blue-600">Contact</Link>
         </nav>
-        
+
         {/* Mobile menu button */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800">
@@ -31,7 +38,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-white py-4 px-4 shadow-lg">

@@ -5,6 +5,7 @@ import Academics from './pages/Academics';
 import Admissions from './pages/Admissions';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact.tsx';
+import MandatoryDisclosure from './pages/MandatoryDisclosure.tsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
       </Routes>
     </Router>
   );
