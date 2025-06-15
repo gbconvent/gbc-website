@@ -9,10 +9,9 @@ const Footer = () => {
             <h3 className="text-2xl font-bold mb-4">GB Convent Etah</h3>
             <p className="mb-4">Providing quality education since 2020. Our mission is to nurture young minds for a better tomorrow.</p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-yellow-400"><FaFacebook size={20} /></a>
-              <a href="#" className="hover:text-yellow-400"><FaTwitter size={20} /></a>
-              <a href="#" className="hover:text-yellow-400"><FaInstagram size={20} /></a>
-              <a href="#" className="hover:text-yellow-400"><FaYoutube size={20} /></a>
+              <a href="https://www.facebook.com/gbconventetah" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><FaFacebook size={20} /></a>
+              <a href="https://www.instagram.com/gbconventetah/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><FaInstagram size={20} /></a>
+              <a href="https://www.youtube.com/@GBConventEtah" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><FaYoutube size={20} /></a>
             </div>
           </div>
 
