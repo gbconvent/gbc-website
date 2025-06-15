@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { FaExternalLinkAlt, FaDownload} from 'react-icons/fa';
+import { FaExternalLinkAlt, FaDownload } from 'react-icons/fa';
 
 const MandatoryDisclosure = () => {
   const documents = [
@@ -72,17 +72,14 @@ const MandatoryDisclosure = () => {
     // }
   ];
 
-  // Function to handle download
+  // Handle download
   const handleDownload = (filePath: string, title: string) => {
-    // In a real app, this would download the actual file
-    // For demo purposes, we'll simulate it
     const link = document.createElement('a');
     link.href = filePath;
     link.download = `${title.replace(/\s+/g, '-').toLowerCase()}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
   };
 
   // Handle view (opens in new tab)
@@ -125,28 +122,38 @@ const MandatoryDisclosure = () => {
 
             <div className="divide-y divide-gray-200">
               {documents.map((doc) => (
-                <div key={doc.id} className="p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-800">{doc.title}</h3>
-                    <p className="text-gray-600">{doc.description}</p>
-                  </div>
-                  <div className="flex space-x-4">
-                    <button
-                      onClick={() => handleView(doc.file)}
-                      className="flex items-center text-blue-800 hover:text-blue-600 transition-colors"
-                      aria-label={`View ${doc.title}`}
-                    >
-                      <FaExternalLinkAlt className="mr-2" />
-                      <span>View</span>
-                    </button>
-                    <button
-                      onClick={() => handleDownload(doc.file, doc.title)}
-                      className="flex items-center text-blue-800 hover:text-blue-600 transition-colors"
-                      aria-label={`Download ${doc.title}`}
-                    >
-                      <FaDownload className="mr-2" />
-                      <span>Download</span>
-                    </button>
+                <div key={doc.id} className="p-4 md:p-6 hover:bg-gray-50 transition-colors">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div className="flex-1 min-w-0"> {/* Added min-w-0 to prevent text overflow */}
+                      <h3 className="text-lg font-semibold text-gray-800 truncate">{doc.title}</h3>
+                      <p className="text-gray-600 text-sm md:text-base truncate">{doc.description}</p>
+                    </div>
+                    <div className="flex flex-row gap-2 md:gap-3 mt-2 md:mt-0 flex-shrink-0">
+                      <button
+                        onClick={() => handleView(doc.file)}
+                        className="flex items-center justify-center 
+                            text-blue-800 hover:text-blue-600 transition-colors
+                            px-3 py-2
+                            hover:bg-blue-50 whitespace-nowrap
+                            text-sm md:text-base"
+                        aria-label={`View ${doc.title}`}
+                      >
+                        <FaExternalLinkAlt className="mr-2" />
+                        <span>View</span>
+                      </button>
+                      <button
+                        onClick={() => handleDownload(doc.file, doc.title)}
+                        className="flex items-center justify-center
+                            text-blue-800 hover:text-blue-600 transition-colors
+                            px-3 py-2
+                            hover:bg-blue-50 whitespace-nowrap
+                            text-sm md:text-base"
+                        aria-label={`Download ${doc.title}`}
+                      >
+                        <FaDownload className="mr-2" />
+                        <span>Download</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
