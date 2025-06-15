@@ -12,15 +12,15 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-gray-800">Email</h3>
-                <p className="text-gray-600">info@gbconventetah.edu.in</p>
+                <p className="text-gray-600">gbconventetah@gmail.com</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800">Phone</h3>
-                <p className="text-gray-600">+91 9876543210</p>
+                <p className="text-gray-600">+91 9259065384</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800">Address</h3>
-                <p className="text-gray-600">123 School Road, Etah, Uttar Pradesh 207001</p>
+                <p className="text-gray-600">Gajipur Pahor Road, Etah, Uttar Pradesh 207001</p>
               </div>
             </div>
           </div>

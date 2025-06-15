@@ -44,15 +44,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-2 flex-shrink-0" />
-                <span>123 School Road, Etah, Uttar Pradesh 207001</span>
+                <span>Gajipur Pahor Road, Etah, Uttar Pradesh 207001</span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="mr-2" />
-                <span>+91 9876543210</span>
+                <span>+91 9259065384</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2" />
-                <span>info@gbconventetah.edu.in</span>
+                <span>gbconventetah@gmail.com</span>
               </li>
             </ul>
           </div>

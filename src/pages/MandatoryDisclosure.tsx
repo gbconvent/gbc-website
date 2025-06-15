@@ -145,12 +145,12 @@ const MandatoryDisclosure = () => {
             </p>
             <address className="not-italic">
               <p>GB Convent Etah Administration Office</p>
-              <p>123 School Road, Etah, Uttar Pradesh 207001</p>
-              <p>Phone: +91 9876543210</p>
-              <p>Email: office@gbconventetah.edu.in</p>
+              <p>Gajipur Pahor Road, Etah, Uttar Pradesh 207001</p>
+              <p>Phone: +91 9259065384</p>
+              <p>Email: gbconventetah@gmail.com</p>
             </address>
             <p className="text-gray-700 mt-4">
-              Office Hours: Monday to Friday, 8:00 AM to 3:00 PM
+              Office Hours: Monday to Saturday, 8:00 AM to 1:00 PM
             </p>
           </div>
         </div>
