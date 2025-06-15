@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">GB Convent Etah</h3>
-            <p className="mb-4">Providing quality education since 1995. Our mission is to nurture young minds for a better tomorrow.</p>
+            <p className="mb-4">Providing quality education since 2020. Our mission is to nurture young minds for a better tomorrow.</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-yellow-400"><FaFacebook size={20} /></a>
               <a href="#" className="hover:text-yellow-400"><FaTwitter size={20} /></a>

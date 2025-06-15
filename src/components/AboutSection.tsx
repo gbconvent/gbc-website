@@ -7,7 +7,7 @@ const AboutSection = () => {
             <h2 className="text-3xl font-bold text-blue-800 mb-6">About GB Convent Etah</h2>
             <p className="text-gray-700 mb-4">
               GB Convent Etah is a premier educational institution committed to providing quality education 
-              and fostering holistic development of students. Established in 1995, our school has been a 
+              and fostering holistic development of students. Established in 2020, our school has been a 
               beacon of excellence in education.
             </p>
             <p className="text-gray-700 mb-6">

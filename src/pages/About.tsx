@@ -21,7 +21,7 @@ const About = () => {
             <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
               <h2 className="text-3xl font-bold text-blue-800 mb-6">Our History</h2>
               <p className="text-gray-700 mb-4">
-                Established in 1995, GB Convent Etah has grown from a small institution to one of the most 
+                Established in 2020, GB Convent Etah has grown from a small institution to one of the most 
                 respected schools in the region. Our founder, Shri Gopal Bansal, envisioned a school that 
                 would combine academic excellence with character development.
               </p>
