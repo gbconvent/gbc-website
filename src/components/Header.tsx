@@ -44,10 +44,17 @@ const Header = () => {
         <div className="md:hidden bg-white py-4 px-4 shadow-lg">
           <nav className="flex flex-col space-y-4">
             <Link to="/" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Home</Link>
+
             <Link to="/about" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>About Us</Link>
+
             <Link to="/academics" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Academics</Link>
+
             <Link to="/admissions" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Admissions</Link>
+
+            <Link to="/mandatory-disclosure" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Disclosure</Link>
+
             <Link to="/gallery" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Gallery</Link>
+
             <Link to="/contact" className="text-gray-800 hover:text-blue-600" onClick={() => setIsOpen(false)}>Contact</Link>
           </nav>
         </div>
