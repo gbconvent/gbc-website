@@ -22,7 +22,7 @@ const About = () => {
               <h2 className="text-3xl font-bold text-blue-800 mb-6">Our History</h2>
               <p className="text-gray-700 mb-4">
                 Established in 2020, GB Convent Etah has grown from a small institution to one of the most 
-                respected schools in the region. Our founder, Shri Gopal Bansal, envisioned a school that 
+                respected schools in the region. Our founder, Shri Yogesh Kumar, envisioned a school that 
                 would combine academic excellence with character development.
               </p>
               <p className="text-gray-700 mb-6">
