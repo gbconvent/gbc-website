@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { FaFilePdf } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaDownload} from 'react-icons/fa';
 
 const MandatoryDisclosure = () => {
   const documents = [
@@ -85,6 +85,11 @@ const MandatoryDisclosure = () => {
 
   };
 
+  // Handle view (opens in new tab)
+  const handleView = (filePath: string) => {
+    window.open(filePath, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div>
       <Header />
@@ -120,18 +125,28 @@ const MandatoryDisclosure = () => {
 
             <div className="divide-y divide-gray-200">
               {documents.map((doc) => (
-                <div
-                  key={doc.id}
-                  className="p-6 hover:bg-gray-50 transition-colors cursor-pointer flex justify-between items-center"
-                  onClick={() => handleDownload(doc.file, doc.title)}
-                >
-                  <div>
+                <div key={doc.id} className="p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                  <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-800">{doc.title}</h3>
                     <p className="text-gray-600">{doc.description}</p>
                   </div>
-                  <div className="text-blue-800 flex items-center">
-                    <FaFilePdf className="mr-2" size={20} />
-                    <span>Download</span>
+                  <div className="flex space-x-4">
+                    <button
+                      onClick={() => handleView(doc.file)}
+                      className="flex items-center text-blue-800 hover:text-blue-600 transition-colors"
+                      aria-label={`View ${doc.title}`}
+                    >
+                      <FaExternalLinkAlt className="mr-2" />
+                      <span>View</span>
+                    </button>
+                    <button
+                      onClick={() => handleDownload(doc.file, doc.title)}
+                      className="flex items-center text-blue-800 hover:text-blue-600 transition-colors"
+                      aria-label={`Download ${doc.title}`}
+                    >
+                      <FaDownload className="mr-2" />
+                      <span>Download</span>
+                    </button>
                   </div>
                 </div>
               ))}
