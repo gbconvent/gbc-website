@@ -12,8 +12,8 @@ const MandatoryDisclosure = () => {
     // },
     {
       id: 2,
-      title: "Recognition Certificate",
-      description: "Recognition Certificate under RTE Act 2009",
+      title: "Recognition Letter",
+      description: "Recognition Letter by Basic Shiksha Parishad.",
       file: "/documents/Recognition Letter of G B Convent attested.pdf"
     },
     // {
@@ -51,6 +51,12 @@ const MandatoryDisclosure = () => {
       title: "Self-Declaration Affidavit",
       description: "Self-declaration affidavit for CBSE school affiliation compliance.",
       file: "/documents/Affidavit G.B. Convent.pdf"
+    },
+        {
+      id: 9,
+      title: "DEO Certificate",
+      description: "DEO Certification for CBSE affiliation and compliance.",
+      file: "public/documents/DEO Of GB Convent.pdf"
     },
     // {
     //   id: 8,
