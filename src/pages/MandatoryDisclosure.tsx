@@ -56,7 +56,7 @@ const MandatoryDisclosure = () => {
       id: 9,
       title: "DEO Certificate",
       description: "DEO Certification for CBSE affiliation and compliance.",
-      file: "public/documents/DEO Of GB Convent.pdf"
+      file: "/documents/DEO Of GB Convent.pdf"
     },
     // {
     //   id: 8,
