@@ -82,6 +82,18 @@ const MandatoryDisclosure = () => {
       description: "",
       file: "/documents/School Staff List.pdf"
     },
+    {
+      id: 14,
+      title: "Academic Calendar",
+      description: "",
+      file: "/documents/ACADEMIC CALANDER FOR G.B CONVENT.pdf"
+    },
+    {
+      id: 15,
+      title: "G.B. Convent Educational Trust",
+      description: "",
+      file: "/documents/G B Convent Educational Trust.pdf"
+    },
     // {
     //   id: 8,
     //   title: "Academic Calendar",
