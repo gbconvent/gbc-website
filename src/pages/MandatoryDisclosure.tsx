@@ -52,11 +52,35 @@ const MandatoryDisclosure = () => {
       description: "Self-declaration affidavit for CBSE school affiliation compliance.",
       file: "/documents/Affidavit G.B. Convent.pdf"
     },
-        {
+    {
       id: 9,
       title: "DEO Certificate",
       description: "DEO Certification for CBSE affiliation and compliance.",
       file: "/documents/DEO Of GB Convent.pdf"
+    },
+    {
+      id: 10,
+      title: "Fee Structure",
+      description: "",
+      file: "/documents/Fee Structure.pdf"
+    },
+    {
+      id: 11,
+      title: "List of PTA 2025-27",
+      description: "",
+      file: "/documents/List of PTA 2025-27.pdf"
+    },
+    {
+      id: 12,
+      title: "Management List 2025-30",
+      description: "",
+      file: "/documents/Management List 2025-30.pdf"
+    },
+    {
+      id: 13,
+      title: "School Staff List",
+      description: "",
+      file: "/documents/School Staff List.pdf"
     },
     // {
     //   id: 8,
