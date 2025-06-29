@@ -85,27 +85,21 @@ const MandatoryDisclosure = () => {
     {
       id: 14,
       title: "Academic Calendar",
-      description: "",
+      description: "School Academic Calendar for current session",
       file: "/documents/ACADEMIC CALANDER FOR G.B CONVENT.pdf"
     },
     {
       id: 15,
       title: "G.B. Convent Educational Trust",
-      description: "",
+      description: "Certificate of registration of trust",
       file: "/documents/G B Convent Educational Trust.pdf"
     },
-    // {
-    //   id: 8,
-    //   title: "Academic Calendar",
-    //   description: "School Academic Calendar for current session",
-    //   file: "/documents/academic-calendar.pdf"
-    // },
-    // {
-    //   id: 9,
-    //   title: "Fee Structure",
-    //   description: "Detailed fee structure as approved by CBSE",
-    //   file: "/documents/fee-structure.pdf"
-    // },
+    {
+      id: 16,
+      title: "Appendix 9 Mandatory Disclosure",
+      description: "Mandatory CBSE disclosure containting compliance documents links & other details",
+      file: "/documents/Appendix 9 Mandatory Disclosure.pdf"
+    },
     // {
     //   id: 10,
     //   title: "Last Three Years Results",
