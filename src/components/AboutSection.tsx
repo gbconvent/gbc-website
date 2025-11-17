@@ -25,8 +25,12 @@ const AboutSection = () => {
             </button>
           </div>
           <div className="md:w-1/2">
-            <div className="bg-gray-200 h-64 md:h-96 rounded-lg overflow-hidden">
-              <img src={SchoolImage} alt="School Building" className="w-full h-full object-cover"/>
+            <div className="rounded-lg overflow-hidden aspect-[4/3]">
+              <img 
+                src={SchoolImage} 
+                alt="School Building" 
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
         </div>
