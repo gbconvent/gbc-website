@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import SchoolImage from "../assets/school-building-front.jpg";
 
 const AboutSection = () => {
   let navigate = useNavigate();
@@ -25,10 +26,7 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <div className="bg-gray-200 h-64 md:h-96 rounded-lg overflow-hidden">
-              {/* Replace with actual image */}
-              <div className="w-full h-full flex items-center justify-center text-gray-500">
-                School Building Image
-              </div>
+              <img src={SchoolImage} alt="School Building" className="w-full h-full object-cover"/>
             </div>
           </div>
         </div>
