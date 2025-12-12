@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/inspection",
+      "destination": "https://www.youtube.com/watch?v=meX12OqZaHY",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
