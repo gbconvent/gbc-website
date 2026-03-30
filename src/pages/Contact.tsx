@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { contactInfo, officeHours, administrationContacts } from '../data/organization';
 
 const Contact = () => {
@@ -19,28 +19,47 @@ const Contact = () => {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+            <a href={contactInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="block bg-gray-50 p-6 rounded-lg text-center hover:bg-gray-100 transition-colors cursor-pointer">
               <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
                 <FaMapMarkerAlt size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Address</h3>
               <p className="text-gray-600">{contactInfo.address}, {contactInfo.postalCode}</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <span className="text-sm text-blue-500">Click to view on map</span>
+            </a>
+            <a href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, '')}`} className="block bg-gray-50 p-6 rounded-lg text-center hover:bg-gray-100 transition-colors cursor-pointer">
               <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
                 <FaPhone size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
               <p className="text-gray-600">{contactInfo.phone}</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg text-center">
+              <span className="text-sm text-blue-500">Click to call</span>
+            </a>
+            <a href={`mailto:${contactInfo.email}`} className="block bg-gray-50 p-6 rounded-lg text-center hover:bg-gray-100 transition-colors cursor-pointer">
               <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
                 <FaEnvelope size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Email</h3>
               <p className="text-gray-600">{contactInfo.email}</p>
-            </div>
+              <span className="text-sm text-blue-500">Click to email</span>
+            </a>
+            <a href={`https://wa.me/${contactInfo.phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="block bg-gray-50 p-6 rounded-lg text-center hover:bg-gray-100 transition-colors cursor-pointer">
+              <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                <FaWhatsapp size={24} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
+              <p className="text-gray-600">{contactInfo.phone}</p>
+              <span className="text-sm text-blue-500">Click to message</span>
+            </a>
+            <a href="https://www.instagram.com/gbconventetah/" target="_blank" rel="noopener noreferrer" className="block bg-gray-50 p-6 rounded-lg text-center hover:bg-gray-100 transition-colors cursor-pointer">
+              <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                <FaInstagram size={24} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Instagram</h3>
+              <p className="text-gray-600">@gbconventetah</p>
+              <span className="text-sm text-blue-500">Click to message</span>
+            </a>
           </div>
 
           <div className="flex flex-col md:flex-row">

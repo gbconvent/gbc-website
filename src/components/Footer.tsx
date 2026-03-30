@@ -1,9 +1,10 @@
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
 import { contactInfo, socialMediaLinks } from '../data/organization';
 
 const Footer = () => {
   const iconMap: Record<string, React.ReactNode> = {
     facebook: <FaFacebook size={20} />,
+    whatsapp: <FaWhatsapp size={20} />,
     instagram: <FaInstagram size={20} />,
     youtube: <FaYoutube size={20} />
   };
