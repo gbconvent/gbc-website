@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
+import GalleryPhoto from './GalleryPhoto';
 
 const galleryImages = [
-  { id: 1, alt: "School Building" },
-  { id: 2, alt: "Classroom" },
-  { id: 3, alt: "Sports Day" },
-  { id: 4, alt: "Annual Function" },
-  { id: 5, alt: "Science Fair" },
-  { id: 6, alt: "Students in Lab" }
+  { id: 1, alt: "School Building", src: "/images/gallery1.jpg" },
+  { id: 2, alt: "Classroom", src: "/images/gallery2.jpg" },
+  { id: 3, alt: "Sports Day", src: "/images/gallery3.jpg" },
+  { id: 4, alt: "Annual Function", src: "/images/gallery4.jpg" },
+  { id: 5, alt: "Science Fair", src: "/images/gallery5.jpg" },
+  { id: 6, alt: "Students in Lab", src: "/images/gallery6.jpg" }
 ];
 
 const GallerySection = () => {
@@ -22,16 +22,7 @@ const GallerySection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image) => (
-            <motion.div 
-              key={image.id}
-              whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-lg shadow-md"
-            >
-              <div className="bg-gray-200 h-64 flex items-center justify-center">
-                {/* Replace with actual images */}
-                <span className="text-gray-500">{image.alt}</span>
-              </div>
-            </motion.div>
+            <GalleryPhoto key={image.id} alt={image.alt} src={image.src} />
           ))}
         </div>
 
