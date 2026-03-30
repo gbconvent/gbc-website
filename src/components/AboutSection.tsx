@@ -3,7 +3,8 @@ import { imageSources } from "../data/imageSources";
 import { getImageSources } from "../utils/imageLoader";
 
 const assetImports = import.meta.glob('../assets/*.webp', {
-  as: 'url',
+  query: '?url',
+  import: 'default',
   eager: true
 }) as Record<string, string>;
 
@@ -31,17 +32,29 @@ const AboutSection = () => {
               We believe in nurturing young minds with a perfect blend of academic rigor and
               co-curricular activities to prepare them for the challenges of the 21st century.
             </p>
-            <button className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded" onClick={() => {
-              navigate("/about");
-            }}>
+            <button
+              className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded"
+              onClick={() => {
+                navigate("/about");
+              }}
+            >
               Read More
             </button>
           </div>
+
           <div className="md:w-1/2">
             <div className="rounded-lg overflow-hidden aspect-[4/3]">
               <img
-                src={srcMedium}
-                srcSet={`${srcLow} 400w, ${srcMedium} 800w, ${srcHigh} 1200w`}
+                src={srcMedium || srcHigh || srcLow}   // ✅ fallback added
+                srcSet={
+                  [
+                    srcLow && `${srcLow} 400w`,
+                    srcMedium && `${srcMedium} 800w`,
+                    srcHigh && `${srcHigh} 1200w`
+                  ]
+                    .filter(Boolean)
+                    .join(", ")
+                }
                 sizes="(max-width: 768px) 100vw, 50vw"
                 alt="School Building"
                 className="w-full h-full object-cover object-center"
@@ -49,6 +62,7 @@ const AboutSection = () => {
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>

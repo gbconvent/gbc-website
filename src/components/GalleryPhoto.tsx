@@ -115,8 +115,16 @@ const GalleryPhoto = ({ alt, srcLow, srcMedium, srcHigh, index }: GalleryPhotoPr
     >
       <div className="bg-gray-200 h-64">
         <img
-          src={srcMedium}
-          srcSet={`${srcLow} 400w, ${srcMedium} 800w, ${srcHigh} 1200w`}
+          src={srcMedium || srcHigh || srcLow}   // fallback
+          srcSet={
+            [
+              srcLow && `${srcLow} 400w`,
+              srcMedium && `${srcMedium} 800w`,
+              srcHigh && `${srcHigh} 1200w`
+            ]
+              .filter(Boolean)
+              .join(", ")
+          }
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           alt={alt}
           className="w-full h-full object-cover"
@@ -148,8 +156,20 @@ const GalleryPhoto = ({ alt, srcLow, srcMedium, srcHigh, index }: GalleryPhotoPr
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentIndex}
-                    src={images[currentIndex!].srcMedium}
-                    srcSet={`${images[currentIndex!].srcLow} 400w, ${images[currentIndex!].srcMedium} 800w, ${images[currentIndex!].srcHigh} 1200w`}
+                    src={
+                      images[currentIndex!].srcMedium ||
+                      images[currentIndex!].srcHigh ||
+                      images[currentIndex!].srcLow
+                    } // fallback
+                    srcSet={
+                      [
+                        images[currentIndex!].srcLow && `${images[currentIndex!].srcLow} 400w`,
+                        images[currentIndex!].srcMedium && `${images[currentIndex!].srcMedium} 800w`,
+                        images[currentIndex!].srcHigh && `${images[currentIndex!].srcHigh} 1200w`
+                      ]
+                        .filter(Boolean)
+                        .join(", ")
+                    }
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 50vw"
                     alt={images[currentIndex!].alt}
                     onWheel={handleWheel}
@@ -199,7 +219,7 @@ const GalleryPhoto = ({ alt, srcLow, srcMedium, srcHigh, index }: GalleryPhotoPr
                 >
                   <X size={16} />
                 </button>
-            </div>
+              </div>
 
               <div className="mt-3 flex flex-col items-center gap-2">
                 <p className="text-sm text-white bg-black/70 px-3 py-1 rounded">
@@ -207,22 +227,23 @@ const GalleryPhoto = ({ alt, srcLow, srcMedium, srcHigh, index }: GalleryPhotoPr
                 </p>
                 <div className="w-full overflow-x-auto">
                   <div className="flex items-center justify-center gap-2">
-                {images.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img.srcMedium}
-                    alt={img.alt}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`h-14 w-20 object-cover rounded cursor-pointer transition border-2 ${
-                      i === currentIndex
-                        ? "border-blue-400 ring-2 ring-white"
-                        : "border-transparent opacity-70 hover:opacity-100"
-                    }`}
-                  />
-                ))}
+                    {images.map((img, i) => (
+                      <img
+                        key={i}
+                        src={img.srcMedium}
+                        alt={img.alt}
+                        onClick={() => setCurrentIndex(i)}
+                        className={`h-14 w-20 object-cover rounded cursor-pointer transition border-2 ${
+                          i === currentIndex
+                            ? "border-blue-400 ring-2 ring-white"
+                            : "border-transparent opacity-70 hover:opacity-100"
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
+
             </div>
           </motion.div>
         )}
