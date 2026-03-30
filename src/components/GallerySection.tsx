@@ -5,15 +5,22 @@ import { imageSources } from '../data/imageSources';
 import { getImageSources } from '../utils/imageLoader';
 
 const assetImports = import.meta.glob('../assets/*.webp', {
-  as: 'url',
+  query: '?url',
+  import: 'default',
   eager: true
 }) as Record<string, string>;
 
-const galleryImagesData = imageSources.map((item) => ({
-  id: item.id,
-  alt: item.alt,
-  ...getImageSources(assetImports, item.key)
-}));
+const galleryImagesData = imageSources.map((item) => {
+  const { srcLow, srcMedium, srcHigh } = getImageSources(assetImports, item.key);
+
+  return {
+    id: item.id,
+    alt: item.alt,
+    srcLow: srcLow || '',
+    srcMedium: srcMedium || '',
+    srcHigh: srcHigh || ''
+  };
+});
 
 const GallerySection = () => {
   const navigate = useNavigate();
