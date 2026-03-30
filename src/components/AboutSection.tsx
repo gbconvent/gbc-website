@@ -1,8 +1,21 @@
 import { useNavigate } from "react-router-dom";
-import SchoolImage from "../assets/school-building-front.jpg";
+import { imageSources } from "../data/imageSources";
+import { getImageSources } from "../utils/imageLoader";
+
+const assetImports = import.meta.glob('../assets/*.webp', {
+  as: 'url',
+  eager: true
+}) as Record<string, string>;
 
 const AboutSection = () => {
   let navigate = useNavigate();
+  
+  const schoolBuildingImage = imageSources.find(img => img.key === 'school-building-front');
+  
+  const { srcLow, srcMedium, srcHigh } = schoolBuildingImage
+    ? getImageSources(assetImports, schoolBuildingImage.key)
+    : { srcLow: '', srcMedium: '', srcHigh: '' };
+  
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -26,10 +39,13 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <div className="rounded-lg overflow-hidden aspect-[4/3]">
-              <img 
-                src={SchoolImage} 
-                alt="School Building" 
+              <img
+                src={srcMedium}
+                srcSet={`${srcLow} 400w, ${srcMedium} 800w, ${srcHigh} 1200w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt="School Building"
                 className="w-full h-full object-cover object-center"
+                loading="lazy"
               />
             </div>
           </div>
