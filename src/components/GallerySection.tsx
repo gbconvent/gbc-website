@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import GalleryPhoto from './GalleryPhoto';
 import { GalleryProvider } from './GalleryContext';
 
@@ -11,6 +12,7 @@ const galleryImages = [
 ];
 
 const GallerySection = () => {
+  const navigate = useNavigate();
 
   return (
     <GalleryProvider images={galleryImages}>
@@ -35,7 +37,10 @@ const GallerySection = () => {
           </div>
 
           <div className="text-center mt-8">
-            <button className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded">
+            <button
+              onClick={() => navigate('/gallery')}
+              className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-6 rounded"
+            >
               View More
             </button>
           </div>
