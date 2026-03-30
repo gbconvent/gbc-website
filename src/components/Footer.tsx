@@ -18,11 +18,11 @@ const Footer = () => {
             <p className="mb-4">Providing quality education since 2020. Our mission is to nurture young minds for a better tomorrow.</p>
             <div className="flex space-x-4">
               {socialMediaLinks.map((link) => (
-                <a 
+                <a
                   key={link.platform}
-                  href={link.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-yellow-400"
                   aria-label={link.platform}
                 >
@@ -60,15 +60,34 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-2 flex-shrink-0" />
-                <span>{contactInfo.address}, {contactInfo.postalCode}</span>
+                <a
+                  href={`${contactInfo.mapUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400"
+                >
+                  {contactInfo.address}, {contactInfo.postalCode}
+                </a>
               </li>
+
               <li className="flex items-center">
                 <FaPhone className="mr-2" />
-                <span>{contactInfo.phone}</span>
+                <a
+                  href={`tel:${contactInfo.phone}`}
+                  className="hover:text-yellow-400"
+                >
+                  {contactInfo.phone}
+                </a>
               </li>
+
               <li className="flex items-center">
                 <FaEnvelope className="mr-2" />
-                <span>{contactInfo.email}</span>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="hover:text-yellow-400"
+                >
+                  {contactInfo.email}
+                </a>
               </li>
             </ul>
           </div>
