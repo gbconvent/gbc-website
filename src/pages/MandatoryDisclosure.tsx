@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { FaExternalLinkAlt, FaDownload } from 'react-icons/fa';
+import { contactInfo, officeHours } from '../data/organization';
 
 const MandatoryDisclosure = () => {
   const documents = [
@@ -203,12 +204,12 @@ const MandatoryDisclosure = () => {
             </p>
             <address className="not-italic">
               <p>GB Convent Etah Administration Office</p>
-              <p>Gajipur Pahor Road, Etah, Uttar Pradesh 207001</p>
-              <p>Phone: +91 9259065384</p>
-              <p>Email: gbconventetah@gmail.com</p>
+              <p>{contactInfo.address}, {contactInfo.postalCode}</p>
+              <p>Phone: {contactInfo.phone}</p>
+              <p>Email: {contactInfo.email}</p>
             </address>
             <p className="text-gray-700 mt-4">
-              Office Hours: Monday to Saturday, 8:00 AM to 1:00 PM
+              Office Hours: {officeHours[0].day}, {officeHours[0].hours}
             </p>
           </div>
         </div>

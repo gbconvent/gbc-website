@@ -1,3 +1,5 @@
+import { contactInfo } from '../data/organization';
+
 const ContactSection = () => {
   return (
     <section className="py-20 bg-white">
@@ -12,15 +14,15 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold text-gray-800">Email</h3>
-                <p className="text-gray-600">gbconventetah@gmail.com</p>
+                <p className="text-gray-600">{contactInfo.email}</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800">Phone</h3>
-                <p className="text-gray-600">+91 9259065384</p>
+                <p className="text-gray-600">{contactInfo.phone}</p>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800">Address</h3>
-                <p className="text-gray-600">Gajipur Pahor Road, Etah, Uttar Pradesh 207001</p>
+                <p className="text-gray-600">{contactInfo.address}, {contactInfo.postalCode}</p>
               </div>
             </div>
           </div>

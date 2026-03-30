@@ -1,18 +1,30 @@
 import { useNavigate } from 'react-router-dom';
 import GalleryPhoto from './GalleryPhoto';
 import { GalleryProvider } from './GalleryContext';
+import { imageSources } from '../data/imageSources';
+import { getImageSources } from '../utils/imageLoader';
 
-const galleryImages = [
-  { id: 1, alt: "School Building", src: "https://picsum.photos/id/1011/800/600" },
-  { id: 2, alt: "Classroom", src: "https://picsum.photos/id/1015/800/600" },
-  { id: 3, alt: "Sports Day", src: "https://picsum.photos/id/1025/800/600" },
-  { id: 4, alt: "Annual Function", src: "https://picsum.photos/id/1035/800/600" },
-  { id: 5, alt: "Science Fair", src: "https://picsum.photos/id/180/800/600" },
-  { id: 6, alt: "Students in Lab", src: "https://picsum.photos/id/1062/800/600" }
-];
+const assetImports = import.meta.glob('../assets/*.webp', {
+  as: 'url',
+  eager: true
+}) as Record<string, string>;
+
+const galleryImagesData = imageSources.map((item) => ({
+  id: item.id,
+  alt: item.alt,
+  ...getImageSources(assetImports, item.key)
+}));
 
 const GallerySection = () => {
   const navigate = useNavigate();
+
+  const galleryImages = galleryImagesData.map((img) => ({
+    id: img.id,
+    alt: img.alt,
+    srcLow: img.srcLow,
+    srcMedium: img.srcMedium,
+    srcHigh: img.srcHigh
+  }));
 
   return (
     <GalleryProvider images={galleryImages}>
@@ -30,7 +42,9 @@ const GallerySection = () => {
               <GalleryPhoto
                 key={image.id}
                 alt={image.alt}
-                src={image.src}
+                srcLow={image.srcLow}
+                srcMedium={image.srcMedium}
+                srcHigh={image.srcHigh}
                 index={index}
               />
             ))}

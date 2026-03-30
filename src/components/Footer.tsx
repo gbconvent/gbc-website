@@ -1,6 +1,13 @@
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { contactInfo, socialMediaLinks } from '../data/organization';
 
 const Footer = () => {
+  const iconMap: Record<string, React.ReactNode> = {
+    facebook: <FaFacebook size={20} />,
+    instagram: <FaInstagram size={20} />,
+    youtube: <FaYoutube size={20} />
+  };
+
   return (
     <footer className="bg-blue-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -9,9 +16,18 @@ const Footer = () => {
             <h3 className="text-2xl font-bold mb-4">GB Convent Etah</h3>
             <p className="mb-4">Providing quality education since 2020. Our mission is to nurture young minds for a better tomorrow.</p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/gbconventetah" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><FaFacebook size={20} /></a>
-              <a href="https://www.instagram.com/gbconventetah/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><FaInstagram size={20} /></a>
-              <a href="https://www.youtube.com/@GBConventEtah" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><FaYoutube size={20} /></a>
+              {socialMediaLinks.map((link) => (
+                <a 
+                  key={link.platform}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-yellow-400"
+                  aria-label={link.platform}
+                >
+                  {iconMap[link.platform]}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -43,15 +59,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-2 flex-shrink-0" />
-                <span>Gajipur Pahor Road, Etah, Uttar Pradesh 207001</span>
+                <span>{contactInfo.address}, {contactInfo.postalCode}</span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="mr-2" />
-                <span>+91 9259065384</span>
+                <span>{contactInfo.phone}</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2" />
-                <span>gbconventetah@gmail.com</span>
+                <span>{contactInfo.email}</span>
               </li>
             </ul>
           </div>

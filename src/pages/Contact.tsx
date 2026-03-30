@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { contactInfo, officeHours, administrationContacts } from '../data/organization';
 
 const Contact = () => {
   return (
@@ -24,21 +25,21 @@ const Contact = () => {
                 <FaMapMarkerAlt size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Address</h3>
-              <p className="text-gray-600">Gajipur Pahor Road, Etah, Uttar Pradesh 207001</p>
+              <p className="text-gray-600">{contactInfo.address}, {contactInfo.postalCode}</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg text-center">
               <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
                 <FaPhone size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p className="text-gray-600">+91 9259065384</p>
+              <p className="text-gray-600">{contactInfo.phone}</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg text-center">
               <div className="bg-blue-100 text-blue-800 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
                 <FaEnvelope size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-gray-600">info@gbconventetah.in</p>
+              <p className="text-gray-600">{contactInfo.email}</p>
             </div>
           </div>
 
@@ -90,7 +91,7 @@ const Contact = () => {
             <div className="md:w-1/2">
               <div className="bg-gray-200 h-96 rounded-lg overflow-hidden mb-8">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.755534830704!2d78.63338557508703!3d27.539053076279377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974ff66e727ea79%3A0xa37eade2e6b0d13a!2sGB%20CONVENT%20SCHOOL%20ETAH!5e0!3m2!1sen!2sin!4v1749972210719!5m2!1sen!2sin"
+                  src={contactInfo.mapEmbedUrl}
                   width="600"
                   height="450"
                   style={{ border: 0 }}
@@ -110,14 +111,12 @@ const Contact = () => {
                   Office Hours
                 </h3>
                 <ul className="space-y-2">
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Monday - Saturday</span>
-                    <span className="text-gray-600">8:00 AM - 1:00 PM</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Sunday</span>
-                    <span className="text-gray-600">Closed</span>
-                  </li>
+                  {officeHours.map((hour, index) => (
+                    <li key={index} className="flex justify-between">
+                      <span className="text-gray-700">{hour.day}</span>
+                      <span className="text-gray-600">{hour.hours}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -130,30 +129,11 @@ const Contact = () => {
           <h2 className="text-3xl font-bold text-blue-800 mb-6">School Administration</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: "Principal",
-                email: "principal@gbconventetah.edu.in",
-                phone: "+91 9876543201"
-              },
-              {
-                name: "Admissions Office",
-                email: "admissions@gbconventetah.edu.in",
-                phone: "+91 9876543202"
-              },
-              {
-                name: "Accounts Department",
-                email: "accounts@gbconventetah.edu.in",
-                phone: "+91 9876543203"
-              }
-            ].map((person, index) => (
+            {administrationContacts.map((person, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold text-blue-800 mb-4">{person.name}</h3>
+                <h3 className="text-xl font-semibold text-blue-800 mb-2">{person.designation}</h3>
+                <p className="text-gray-700 mb-4">{person.name}</p>
                 <div className="space-y-2">
-                  <p className="flex items-center justify-center">
-                    <FaEnvelope className="mr-2 text-blue-800" />
-                    <span className="text-gray-600">{person.email}</span>
-                  </p>
                   <p className="flex items-center justify-center">
                     <FaPhone className="mr-2 text-blue-800" />
                     <span className="text-gray-600">{person.phone}</span>

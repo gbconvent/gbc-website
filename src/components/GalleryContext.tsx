@@ -3,7 +3,9 @@ import type { ReactNode } from 'react';
 
 interface GalleryImage {
   alt: string;
-  src: string;
+  srcLow: string;
+  srcMedium: string;
+  srcHigh: string;
 }
 
 interface GalleryContextType {

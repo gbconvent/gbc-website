@@ -5,11 +5,13 @@ import { useGallery } from "./GalleryContext";
 
 interface GalleryPhotoProps {
   alt: string;
-  src: string;
+  srcLow: string;
+  srcMedium: string;
+  srcHigh: string;
   index: number;
 }
 
-const GalleryPhoto = ({ alt, src, index }: GalleryPhotoProps) => {
+const GalleryPhoto = ({ alt, srcLow, srcMedium, srcHigh, index }: GalleryPhotoProps) => {
   const { images, currentIndex, setCurrentIndex } = useGallery();
 
   const isOpen = currentIndex === index;
@@ -58,7 +60,7 @@ const GalleryPhoto = ({ alt, src, index }: GalleryPhotoProps) => {
   useEffect(() => {
     if (currentIndex === null) return;
     const next = new Image();
-    next.src = images[(currentIndex + 1) % images.length].src;
+    next.src = images[(currentIndex + 1) % images.length].srcMedium;
   }, [currentIndex]);
 
   // ---------------- ZOOM ----------------
@@ -113,7 +115,9 @@ const GalleryPhoto = ({ alt, src, index }: GalleryPhotoProps) => {
     >
       <div className="bg-gray-200 h-64">
         <img
-          src={src}
+          src={srcMedium}
+          srcSet={`${srcLow} 400w, ${srcMedium} 800w, ${srcHigh} 1200w`}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           alt={alt}
           className="w-full h-full object-cover"
           loading="lazy"
@@ -144,7 +148,9 @@ const GalleryPhoto = ({ alt, src, index }: GalleryPhotoProps) => {
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentIndex}
-                    src={images[currentIndex!].src}
+                    src={images[currentIndex!].srcMedium}
+                    srcSet={`${images[currentIndex!].srcLow} 400w, ${images[currentIndex!].srcMedium} 800w, ${images[currentIndex!].srcHigh} 1200w`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 50vw"
                     alt={images[currentIndex!].alt}
                     onWheel={handleWheel}
                     onDoubleClick={handleDoubleClick}
@@ -204,7 +210,7 @@ const GalleryPhoto = ({ alt, src, index }: GalleryPhotoProps) => {
                 {images.map((img, i) => (
                   <img
                     key={i}
-                    src={img.src}
+                    src={img.srcMedium}
                     alt={img.alt}
                     onClick={() => setCurrentIndex(i)}
                     className={`h-14 w-20 object-cover rounded cursor-pointer transition border-2 ${
