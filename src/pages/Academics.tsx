@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Academics = () => {
   const programs = [
@@ -35,6 +36,14 @@ const Academics = () => {
           <p className="text-xl max-w-3xl mx-auto">
             Excellence in education through innovative teaching and learning
           </p>
+          <div className="mt-8">
+            <Link
+              to="/timetable"
+              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-3 px-6 rounded transition-colors"
+            >
+              View Time Table
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -1,0 +1,29 @@
+﻿Soft conflicts of output.fet
+Generated with FET 7.8.5 on 4/22/26 11:15 PM
+
+Number of broken soft constraints: 19
+Total soft conflicts: 18.5197
+
+Soft conflicts list (in descending order):
+
+Time constraint two activities consecutive broken for first activity with id=182 (    1/6 - Jaiveer - EVS - CLASS::II - II) and second activity with id=183 (    1/6 - Jaiveer - EVS - CLASS::II - II), increases conflicts total by 0.9999
+Time constraint two activities consecutive broken for first activity with id=483 (    1/8 - Tomar - English - CLASS::X - X) and second activity with id=484 (    1/8 - Tomar - English - CLASS::X - X), increases conflicts total by 0.9999
+Time constraint two activities consecutive broken for first activity with id=487 (    1/8 - Tomar - English - CLASS::X - X) and second activity with id=488 (    1/8 - Tomar - English - CLASS::X - X), increases conflicts total by 0.9999
+Time constraint teacher activity tag CLASS::UKG max 3 hours daily broken for teacher Deeksha, on day Mon, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::UKG max 3 hours daily broken for teacher Deeksha, on day Tue, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::UKG max 3 hours daily broken for teacher Deeksha, on day Wed, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::UKG max 3 hours daily broken for teacher Deeksha, on day Thu, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::UKG max 3 hours daily broken for teacher Deeksha, on day Fri, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::UKG max 3 hours daily broken for teacher Deeksha, on day Sat, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::II max 3 hours daily broken for teacher Jaiveer, on day Wed, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::II max 3 hours daily broken for teacher Jaiveer, on day Thu, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::NC LKG max 3 hours daily broken for teacher Mamta, on day Mon, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::NC LKG max 3 hours daily broken for teacher Mamta, on day Tue, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::NC LKG max 3 hours daily broken for teacher Mamta, on day Wed, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::NC LKG max 3 hours daily broken for teacher Mamta, on day Thu, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::NC LKG max 3 hours daily broken for teacher Mamta, on day Fri, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::NC LKG max 3 hours daily broken for teacher Mamta, on day Sat, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::III max 3 hours daily broken for teacher SP, on day Tue, length=4. This increases the conflicts total by 0.97
+Time constraint teacher activity tag CLASS::III max 3 hours daily broken for teacher SP, on day Wed, length=4. This increases the conflicts total by 0.97
+
+End of file.

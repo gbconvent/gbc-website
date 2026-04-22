@@ -6,6 +6,7 @@ import Admissions from './pages/Admissions';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact.tsx';
 import MandatoryDisclosure from './pages/MandatoryDisclosure.tsx';
+import TimeTable from './pages/TimeTable.tsx';
 import ScrollToTop from './components/ScrollToTop.tsx';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/academics" element={<Academics />} />
         <Route path="/admissions" element={<Admissions />} />
+        <Route path="/timetable" element={<TimeTable />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
